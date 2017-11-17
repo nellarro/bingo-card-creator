@@ -33,6 +33,7 @@ BINGO
 puts bingo_card
 
 Prawn::Document.generate("bingo.pdf") do
-    text bingo_card
+    define_grid(columns: 5, rows: 6)
+    grid.show_all
 end
   
