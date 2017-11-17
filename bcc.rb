@@ -34,6 +34,9 @@ puts bingo_card
 
 Prawn::Document.generate("bingo.pdf") do
     define_grid(columns: 5, rows: 6)
-    grid.show_all
+
+    grid(0, 0).bounding_box do
+        stroke_bounds
+    end
 end
   
